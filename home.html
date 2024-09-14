@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trend + Home Page</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <header>
+        <div class="logo" id="logo-text">Trend +</div>
+        <div class="header-right">
+            <input type="text" class="search-bar" id="search-bar" placeholder="Search...">
+            <select class="language-select" id="language-select">
+                <option value="en">English</option>
+                <option value="ta">Tamil</option>
+                <option value="te">Telugu</option>
+            </select>
+            <div class="header-links">
+                <a href="#order" id="order-link">Order</a>
+                <a href="#card" id="card-link">Card</a>
+                <a href="#" onclick="logout()">Logout</a>
+            </div>
+        </div>
+    </header>
+    
+    <nav class="sub-header">
+        <a href="todaydeals.html" id="deals-link">Today's Deals</a>
+        <a href="customerservice.html" id="customer-service-link">Customer Service</a>
+        <a href="buyagain.html" id="buy-again-link">Buy Again</a>
+    </nav>
+
+    <main>
+        <section class="categories">
+            <div class="category product" data-name="Gaming Mouse">
+                <h2 id="gaming-category">Gaming Accessories</h2>
+                <a href="gaming-accessories.html">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgar5IU8lE5ZIJmF9b0IQH8ZKWFebfQW7bJw&s" alt="Gaming Accessories">
+                </a>
+            </div>
+            <div class="category product" data-name="Fashion Watch">
+                <h2 id="fashion-category">Fashion</h2>
+                <a href="fashion.html">
+                    <img src="https://s3.envato.com/files/9b00ad62-2d79-480e-b90c-390a5aa79305/inline_image_preview.jpg" alt="Fashion">
+                </a>
+            </div>
+            <div class="category product" data-name="Laptop">
+                <h2 id="electronics-category">Electronics</h2>
+                <a href="electronics.html">
+                    <img src="https://png.pngtree.com/thumb_back/fh260/background/20240812/pngtree-top-view-shot-of-coffee-mug-with-laptop-and-headphone-on-image_16129500.jpg" alt="Electronics">
+                </a>
+            </div>
+        </section>
+
+        <!-- Message to display when no products match the search -->
+        <p id="no-results-message" style="display: none; color: red;">Your search item is not there</p>
+    </main>
+
+    <script>
+        const translations = {
+            en: {
+                logo: "Trend +",
+                searchPlaceholder: "Search...",
+                order: "Order",
+                card: "Card",
+                todaysDeals: "Today's Deals",
+                customerService: "Customer Service",
+                buyAgain: "Buy Again",
+                gamingCategory: "Gaming Accessories",
+                fashionCategory: "Fashion",
+                electronicsCategory: "Electronics"
+            },
+            ta: {
+                logo: "பிரவேசம் +",
+                searchPlaceholder: "தேடல்...",
+                order: "ஆர்டர்",
+                card: "அட்டை",
+                todaysDeals: "இன்றைய சலுகைகள்",
+                customerService: "வாடிக்கையாளர் சேவை",
+                buyAgain: "மீண்டும் வாங்கவும்",
+                gamingCategory: "விளையாட்டு உபகரணங்கள்",
+                fashionCategory: "ஆடை",
+                electronicsCategory: "மின்சாதனங்கள்"
+            },
+            te: {
+                logo: "ప్రవేశం +",
+                searchPlaceholder: "వెతకండి...",
+                order: "ఆర్డర్",
+                card: "కార్డ్",
+                todaysDeals: "ఈరోజు ఆఫర్లు",
+                customerService: "వినియోగదారు సేవ",
+                buyAgain: "మళ్లీ కొనండి",
+                gamingCategory: "గేమింగ్ ఉపకరణాలు",
+                fashionCategory: "ఫ్యాషన్",
+                electronicsCategory: "ఎలక్ట్రానిక్స్"
+            }
+        };
+
+        function updateLanguage(language) {
+            const translation = translations[language];
+            document.getElementById('logo-text').textContent = translation.logo;
+            document.getElementById('search-bar').placeholder = translation.searchPlaceholder;
+            document.getElementById('order-link').textContent = translation.order;
+            document.getElementById('card-link').textContent = translation.card;
+            document.getElementById('deals-link').textContent = translation.todaysDeals;
+            document.getElementById('customer-service-link').textContent = translation.customerService;
+            document.getElementById('buy-again-link').textContent = translation.buyAgain;
+            document.getElementById('gaming-category').textContent = translation.gamingCategory;
+            document.getElementById('fashion-category').textContent = translation.fashionCategory;
+            document.getElementById('electronics-category').textContent = translation.electronicsCategory;
+        }
+
+        document.getElementById('language-select').addEventListener('change', function() {
+            const selectedLanguage = this.value;
+            updateLanguage(selectedLanguage);
+        });
+
+        function logout() {
+            window.location.href = "login.html";
+        }
+
+        window.onload = function() {
+            updateLanguage('en');
+        };
+    </script>
+</body>
+</html>

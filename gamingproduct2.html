@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Product Listing</title>
+    <link rel="stylesheet" href="gamingproduct.css">
+</head>
+<body>
+    <div class="container">
+        <main class="products">
+            <div class="product-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqNR5ZnixacjNb_5RInBe92_t66DhmXK0H9g&s" alt="Mechanical Keyboard 1">
+                <h3>Steelseries Apex Pro</h3>
+                <p>₹18,999</p>
+                <p>Mechanical, RGB, USB, Programmable Keys</p>
+                <button>Add to Cart</button>
+                <button class="buy" onclick="redirectToPayment()">Buy Now</button>
+            </div>
+
+            <div class="product-item">
+                <img src="https://wtfitonline.com/wp-content/uploads/2020/08/Pro-X-1-300x300.jpg" alt="Mechanical Keyboard 2">
+                <h3>Logitech G Pro X</h3>
+                <p>₹12,499</p>
+                <p>Mechanical, Tactile Switches, USB, RGB Lighting</p>
+                <button>Add to Cart</button>
+                <button class="buy" onclick="redirectToPayment()">Buy Now</button>
+            </div>
+
+            <div class="product-item">
+                <img src="https://techmartunbox.com/wp-content/uploads/2021/06/ezgif.com-gif-maker-21-300x300.png" alt="Mechanical Keyboard 3">
+                <h3>Razer Huntsman Mini</h3>
+                <p>₹9,999</p>
+                <p>Compact, RGB, USB, Linear Switches</p>
+                <button>Add to Cart</button>
+                <button class="buy" onclick="redirectToPayment()">Buy Now</button>
+            </div>
+
+            <div class="product-item">
+                <img src="https://compify.in/wp-content/uploads/2022/09/Untitled-2-min-3-5-300x300.jpg" alt="Mechanical Keyboard 4">
+                <h3>Corsair K70 RGB MK.2</h3>
+                <p>₹14,499</p>
+                <p>Mechanical, Cherry MX Switches, USB, RGB Lighting</p>
+                <button>Add to Cart</button>
+                <button class="buy" onclick="redirectToPayment()">Buy Now</button>
+            </div>
+
+            <div class="product-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_gLitsJ031u7Tt0Mp7avkXXitui5ET_kigQ&s" alt="Mechanical Keyboard 5">
+                <h3>HyperX Alloy Origins Core</h3>
+                <p>₹7,499</p>
+                <p>Mechanical, USB, TKL, RGB Lighting</p>
+                <button>Add to Cart</button>
+                <button class="buy" onclick="redirectToPayment()">Buy Now</button>
+            </div>
+
+            <div class="product-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1g9hI9aKzmMA6Cade2GIucI6Q37ENLA_iRA&s" alt="Mechanical Keyboard 6">
+                <h3>Redragon K552 Kumara</h3>
+                <p>₹2,999</p>
+                <p>Compact, Mechanical, USB, RGB Lighting</p>
+                <button>Add to Cart</button>
+                <button class="buy" onclick="redirectToPayment()">Buy Now</button>
+            </div>
+
+            <div class="product-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSg9oLbkjC-flKWL6mhEM27Natw0nLVRLqVg&s" alt="Mechanical Keyboard 7">
+                <h3>Asus ROG Strix Scope</h3>
+                <p>₹13,999</p>
+                <p>Mechanical, USB, RGB, Programmable Keys</p>
+                <button>Add to Cart</button>
+                <button class="buy" onclick="redirectToPayment()">Buy Now</button>
+            </div>
+
+            <div class="product-item">
+                <img src="https://dlcdnwebimgs.asus.com/gain/9E1FA5D0-65AB-4188-84DE-A80058422939/h300/w300" alt="Mechanical Keyboard 8">
+                <h3>Logitech G915 TKL</h3>
+                <p>₹19,999</p>
+                <p>Wireless, Mechanical, RGB, Low Profile</p>
+                <button>Add to Cart</button>
+                <button class="buy" onclick="redirectToPayment()">Buy Now</button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function updatePrice() {
+            var price = document.getElementById("priceRange").value;
+            document.getElementById("priceValue").innerText = price;
+        }
+
+        function redirectToPayment() {
+            window.location.href = "paymentpage.html"; // Redirect to payment page
+        }
+    </script>
+</body>
+</html>

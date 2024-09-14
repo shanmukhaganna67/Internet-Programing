@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping - Login & Forgot Password</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-box" id="loginForm">
+            <h2>Login</h2>
+            <form onsubmit="return validateLogin()">
+                <div class="input-box">
+                    <input type="text" id="loginUsername" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="loginPassword" required>
+                    <label>Password</label>
+                </div>
+                <button type="submit">Login</button>
+                <div class="toggle-text">
+                    <p>Don't have an account? <a href="home.html" onclick="toggleForm()">Register here</a></p>
+                </div>
+                <p id="loginError" style="color: red; display: none;">Invalid Username or Password</p>
+            </form>
+            <p class="forgot-password"><a href="#" onclick="toggleForgotPassword()">Forgot Password?</a></p>
+        </div>
+
+        <div class="form-box hidden" id="registerForm">
+            <h2>Register</h2>
+            <form action="#">
+                <div class="input-box">
+                    <input type="text" id="registerUsername" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <input type="email" id="registerEmail" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="registerPassword" required>
+                    <label>Password</label>
+                </div>
+                <button type="submit">Register</button>
+                <div class="toggle-text">
+                    <p>Already have an account? <a href="home.html" onclick="toggleForm()">Login here</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box hidden" id="forgotPasswordForm">
+            <h2>Forgot Password</h2>
+            <form onsubmit="return sendPasswordResetEmail()">
+                <div class="input-box">
+                    <input type="email" id="forgotEmail" required>
+                    <label>Enter your email</label>
+                </div>
+                <button type="submit">Send Reset Link</button>
+                <p id="resetMessage" style="color: green; display: none;">Reset link sent to your email</p>
+            </form>
+            <p><a href="#" onclick="showLoginForm()">Back to Login</a></p>
+        </div>
+    </div>
+    <script>
+        function validateLogin() {
+            const username = document.getElementById("loginUsername").value;
+            const password = document.getElementById("loginPassword").value;
+
+            if (username !== "" && password !== "") {
+                // Simulate a successful login
+                alert("Login successful! Redirecting to homepage...");
+                window.location.href = "home.html"; // Redirect to homepage
+                return false; // Prevent form submission
+            } else {
+                document.getElementById("loginError").style.display = "block"; // Show error message
+                return false; // Prevent form submission
+            }
+        }
+
+        function toggleForm() {
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            const forgotPasswordForm = document.getElementById('forgotPasswordForm');
+
+            loginForm.classList.toggle('hidden');
+            registerForm.classList.toggle('hidden');
+            forgotPasswordForm.classList.add('hidden'); // Ensure forgot password form is hidden
+        }
+
+        function toggleForgotPassword() {
+            document.getElementById('loginForm').classList.add('hidden'); // Hide login form
+            document.getElementById('forgotPasswordForm').classList.remove('hidden'); // Show forgot password form
+            document.getElementById('registerForm').classList.add('hidden'); // Ensure registration form is hidden
+        }
+
+        function showLoginForm() {
+            document.getElementById('loginForm').classList.remove('hidden'); // Show login form
+            document.getElementById('registerForm').classList.add('hidden'); // Hide register form
+            document.getElementById('forgotPasswordForm').classList.add('hidden'); // Hide forgot password form
+        }
+
+        function sendPasswordResetEmail() {
+            const email = document.getElementById("forgotEmail").value;
+            if (email === "sample@gmail.com") {
+                alert("A password reset link has been sent to " + email);
+                document.getElementById("resetMessage").style.display = "block"; // Show success message
+            } else {
+                alert("Email not recognized");
+            }
+            return false; // Prevent form submission
+        }
+    </script>
+</body>
+</html>

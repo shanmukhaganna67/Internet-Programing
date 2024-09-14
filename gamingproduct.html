@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing</title>
+    <link rel="stylesheet" href="gamingproduct.css">
+</head>
+<body>
+    <div class="container">
+        <main class="products">
+            <div class="product-item">
+                <img src="https://www.jiomart.com/images/product/150x150/493665581/asus-marshmallow-md100-wireless-mouse-quiet-blue-solar-blue-cover-also-included-digital-o493665581-p608536461-0-202403202003.jpeg" alt="Product 1">
+                <h3>ASUS Marshmallow MD100</h3>
+                <p>₹1,399</p>
+                <p>USB, 1600 DPI, Silent Button</p>
+                <button onclick="addToCart('ASUS Marshmallow MD100', '₹1,399')">Add to Cart</button>
+                <button class="buy" onclick="redirectToPayment()">Buy Now</button>
+            </div>
+
+            <div class="product-item">
+                <img src="https://tlggaming.b-cdn.net/image/cache/catalog/products/gaming_mouse/razer/cobra_pro_black/razer_cobra_pro_black_tlg_1-250x250.webp" alt="Product 2">
+                <h3>ASUS WT300 Wireless</h3>
+                <p>₹649</p>
+                <p>Wireless, 1600 DPI, Ambidextrous</p>
+                <button>Add to Cart</button>
+                <button class="buy" onclick="redirectToPayment()">Buy Now</button>
+            </div>
+
+            <div class="product-item">
+                <img src="https://www.techcart.in/wp-content/uploads/2024/07/image1-1-250x250.jpg" alt="Product 3">
+                <h3>Zebronics Zeb-Power</h3>
+                <p>₹299</p>
+                <p>Wired, 1200 DPI, Plug & Play</p>
+                <button>Add to Cart</button>
+                <button class="buy" onclick="redirectToPayment()">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <img src="https://www.skyland.com.bd/image/cache/catalog/2020/08/a4tech-J90-Bloody-5000cpi-Gaming-mouse-250x250.jpg" alt="Product 3">
+                <h3>ZLogitech G305 wirless</h3>
+                <p>₹599</p>
+                <p>Wired, 1200 DPI, Plug & Play</p>
+                <button>Add to Cart</button>
+                <button class="buy" onclick="redirectToPayment()">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <img src="https://www.techcart.in/wp-content/uploads/2020/05/Clarion-Game-Mouse-250x250.jpg" alt="Product 3">
+                <h3>Redragon M656 Wirless</h3>
+                <p>₹432</p>
+                <p>Wired, 1200 DPI, Plug & Play</p>
+                <button>Add to Cart</button>
+                <button class="buy" onclick="redirectToPayment()">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <img src="https://www.vedantcomputers.com/image/cache/catalog/assets/product/logitech/mouse/910-005791/910-005791-1-250x250.jpg" alt="Product 3">
+                <h3>Razer Gaming mouse</h3>
+                <p>₹459</p>
+                <p>Wired, 1200 DPI, Plug & Play</p>
+                <button>Add to Cart</button>
+                <button class="buy" onclick="redirectToPayment()">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <img src="https://www.vedantcomputers.com/image/cache/catalog/assets/product/logitech/mouse/910-004070/910-004070-1-250x250.jpg" alt="Product 3">
+                <h3>FFj gaming mouse</h3>
+                <p>₹359</p>
+                <p>Wired, 1200 DPI, Plug & Play</p>
+                <button>Add to Cart</button>
+                <button class="buy" onclick="redirectToPayment()">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <img src="https://touchheights.com/wp-content/uploads/2023/11/Logitech-G402-Hyperion-Fury-USB-Wired-Gaming-Mouse-250x250.webp" alt="Product 3">
+                <h3>Bengoo Gaming Mouse</h3>
+                <p>₹499</p>
+                <p>Wired, 1200 DPI, Plug & Play</p>
+                <button>Add to Cart</button>
+                <button class="buy" onclick="redirectToPayment()">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <img src="https://cdn2.lnk.bi/uploads/7284940_20240411200027448-250.jpg?lu=2024-09-09+06%3A44%3A12" alt="Product 3">
+                <h3>Customisable mouse </h3>
+                <p>₹999</p>
+                <p>Wired, 1200 DPI, Plug & Play</p>
+                <button>Add to Cart</button>
+                <button class="buy" onclick="redirectToPayment()">Buy Now</button>
+            </div>
+        </main>
+    </div>
+    <script>
+        
+    function addToCart(productName, productPrice) {
+        // Get the existing cart from localStorage or create a new one
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Add the selected product to the cart
+        cart.push({
+            name: productName,
+            price: productPrice
+        });
+
+        // Store the updated cart back in localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Redirect to the home page
+        window.location.href = "home.html";
+    }
+
+
+
+        function updatePrice() {
+    var price = document.getElementById("priceRange").value;
+    document.getElementById("priceValue").innerText = price;
+        }
+        function redirectToPayment() {
+    window.location.href = "paymentpage.html"; // Redirect to payment page
+}
+
+    </script>
+</body>
+</html>

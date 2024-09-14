@@ -1,0 +1,164 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Status & Payment Success</title>
+    <style>
+        /* Payment Success Page */
+        .success-message {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .success-message h1 {
+            color: #4CAF50;
+        }
+
+        .success-message p {
+            font-size: 18px;
+        }
+
+        .success-message a {
+            text-decoration: none;
+            color: white;
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .success-message a:hover {
+            background-color: #45a049;
+        }
+
+        /* Order Status Page */
+        .order-container {
+            text-align: center;
+            margin-top: 15%;
+        }
+
+        .product-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .product-list li {
+            margin-bottom: 10px;
+        }
+
+        .product-list a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-size: 18px;
+        }
+
+        .product-list a:hover {
+            text-decoration: underline;
+        }
+
+        .product-details {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-details h3 {
+            color: #4CAF50;
+        }
+
+        .product-details p {
+            font-size: 16px;
+        }
+
+        .back-home {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .back-home a {
+            text-decoration: none;
+            color: white;
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .back-home a:hover {
+            background-color: #45a049;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://img.freepik.com/free-photo/solid-painted-concrete-wall-textured-background_53876-101613.jpg');
+        }
+        .success-message{
+            background-color: white;
+            max-width: 40%;
+            margin-left: 30%;
+            margin-top: 20%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Payment Success Message -->
+    <div class="success-message product-details">
+        <h1>Thank You For Your Order!</h1>
+        <p>Your payment was successful.</p>
+        <a href="#" onclick="showOrderStatus()">Check Order Status</a>
+    </div>
+
+    <!-- Order Status Section -->
+    <div class="order-container" style="display: none;">
+        <h2>Order Status</h2>
+        <p>Your payment has been successful. Below is the list of ordered products:</p>
+
+        <ul class="product-list">
+            <li><a href="#" onclick="showProductDetails('Product1')">ASUS Marshmallow MD100</a></li>
+            <li><a href="#" onclick="showProductDetails('Product2')">Logitech G305 Wireless</a></li>
+        </ul>
+
+        <div id="productDetails" class="product-details">
+            <h3>Product Details</h3>
+            <p id="productInfo">Click on a product to see the details.</p>
+        </div>
+
+        <!-- Back to Home Button -->
+        <div class="back-home">
+            <a href="home.html">Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        // Function to show order status section
+        function showOrderStatus() {
+            document.querySelector('.success-message').style.display = 'none'; // Hide payment success message
+            document.querySelector('.order-container').style.display = 'block'; // Show order status section
+        }
+
+        // Function to show product details
+        function showProductDetails(productName) {
+            const productInfo = {
+                "Product1": "Product details: ASUS Marshmallow MD100, Price: ₹1,399",
+                "Product2": "Product details: Logitech G305 Wireless, Price: ₹2,499",
+            };
+
+            // Display the product details
+            document.getElementById('productInfo').textContent = productInfo[productName] || "Product details not found.";
+        }
+    </script>
+
+</body>
+</html>

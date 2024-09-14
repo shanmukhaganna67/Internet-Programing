@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20210130/pngtree-textured-solid-color-texture-background-image_543658.jpg');
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    padding: 5px;
+    margin-right: 30px;
+    border: black;
+    border-radius: 8px;
+    
+}
+
+.language-select {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.header-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.header-links a:hover {
+    text-decoration: underline;
+}
+
+.sub-header {
+    background-color: #adb9bb;
+    padding: 30px;
+    text-align: left;
+    text-decoration: none;
+    margin-right: 15px;
+    padding: 20px 20px;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+}
+
+.sub-header a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+}
+
+.sub-header a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+}
+
+.categories {
+    padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+}
+
+.category {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    margin: 10px;
+    border-radius: 8px;
+    
+    
+}
+.category{
+    background-color: #40d9f4;
+    border: black;
+}
+
+.category h2 {
+    margin: 0;
+    background-color: rgb(218, 213, 88); /* Semi-transparent for general sections */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+            width: 50%;
+            text-align: center;
+            color: rgb(15, 3, 3);
+}
+
+.product-list {
+    margin-top: 20px;
+}
+
+.product {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.product h3 {
+    font-size: 18px;
+}
+
+.product p {
+    font-size: 14px;
+    color: gray;
+}
+

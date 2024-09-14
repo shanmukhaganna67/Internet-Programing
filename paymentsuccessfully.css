@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/016/710/701/non_2x/young-businessman-using-credit-card-to-make-financial-transactions-via-smartphone-payment-concept-with-wireless-communication-technology-focus-on-consumer-safety-and-cashlessness-successful-payment-photo.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.success-message {
+    margin-top: 30%;
+    background-color: #f4f4f4;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.success-message h1 {
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+.success-message p {
+    font-size: 18px;
+    color: #333;
+}
+
+.success-message a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.success-message a:hover {
+    background-color: #218838;
+}
